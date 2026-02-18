@@ -11,10 +11,10 @@ class CreateLeads extends Component
     #[Validate(["required", "string", "min:3", "max:255"])]
     public $name;
 
-    #[Validate(["required", "string", "email", "max:255"])]
+    #[Validate(["required", "string", "email", "unique:leads,email", "max:255"])]
     public $email;
 
-    #[Validate(["required", "string", "min:5", "numeric"])]
+    #[Validate(["required", "string", "min:5", "unique:leads,phone", "numeric"])]
     public $phone;
 
     #[Validate(["required", "string", "min:3", "max:255"])]
